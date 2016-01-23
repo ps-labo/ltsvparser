@@ -9,13 +9,13 @@ ltsvparser.awk - AWK based parser from LTSV (Labeled Tab Separated Value) to TSV
 	$ cat ltsvdata.txt | ltsvparser.awk
 	{
 		"datetime":"2014/07/11 19:00",
-		"url":"https://github.com/kazno/",
+		"url":"https://github.com/ps-labo/",
 		"description":"my page",
 		"count":100
 	}
 	{
 		"datetime":"2014/07/11 19:30",
-		"url":"https://github.com/kazno/ltsvparser",
+		"url":"https://github.com/ps-labo/ltsvparser",
 		"description":"ltsvparser",
 		"count":200
 	}
@@ -24,13 +24,13 @@ ltsvparser.awk - AWK based parser from LTSV (Labeled Tab Separated Value) to TSV
 	$ cat ltsvdata.txt | ./ltsvparser.awk highlight=datetime
 	{
 	  "datetime":"2014/07/11 19:00",
-	  "url":"https://github.com/kazno/",
+	  "url":"https://github.com/ps-labo/",
 	  "description":"my page",
 	  "count":100
 	}
 	{
 	  "datetime":"2014/07/11 19:30",
-	  "url":"https://github.com/kazno/ltsvparser",
+	  "url":"https://github.com/ps-labo/ltsvparser",
 	  "description":"ltsvparser",
 	  "count":200
 	}
@@ -38,14 +38,14 @@ ltsvparser.awk - AWK based parser from LTSV (Labeled Tab Separated Value) to TSV
 ### LTSV to TSV (format=tsv)
 	$ cat ltsvdata.txt | ltsvparser.awk format=tsv
 	datetime	url	description	count
-	2014/07/11 19:00	https://github.com/kazno/	my page	100
-	2014/07/11 19:30	https://github.com/kazno/ltsvparser	ltsvparser	200
+	2014/07/11 19:00	https://github.com/ps-labo/	my page	100
+	2014/07/11 19:30	https://github.com/ps-labo/ltsvparser	ltsvparser	200
 
 ### LTSV to TSV with highlight some field
 	$ cat ltsvdata.txt | ltsvparser.awk format=tsv highlight=count
 	datetime	url	description	count
-	2014/07/11 19:00	https://github.com/kazno/	my page	100
-	2014/07/11 19:30	https://github.com/kazno/ltsvparser	ltsvparser	200
+	2014/07/11 19:00	https://github.com/ps-labo/	my page	100
+	2014/07/11 19:30	https://github.com/ps-labo/ltsvparser	ltsvparser	200
 
 ### LTSV to TSV with change field order (label=xxx,xxx)
 	$ cat ltsvdata.txt | ltsvparser.awk format=tsv label=datetime,count,description
@@ -61,26 +61,26 @@ ltsvparser.awk - AWK based parser from LTSV (Labeled Tab Separated Value) to TSV
 ### TSV to JSON/LTSV
 	$ cat tsvdata.txt
 	datetime	url	description	count
-	2014/07/11 19:00	https://github.com/kazno/	my page	100
-	2014/07/11 19:30	https://github.com/kazno/ltsvparser	ltsvparser	200
+	2014/07/11 19:00	https://github.com/ps-labo/	my page	100
+	2014/07/11 19:30	https://github.com/ps-labo/ltsvparser	ltsvparser	200
 	
 	$ cat tsvdata.txt | ltsvparser.awk tsv_label=datetime,url,description,count
 	{
 		"datetime":"2014/07/11 19:00",
-		"url":"https://github.com/kazno/",
+		"url":"https://github.com/ps-labo/",
 		"description":"my page",
 		"count":100
 	}
 	{
 		"datetime":"2014/07/11 19:30",
-		"url":"https://github.com/kazno/ltsvparser",
+		"url":"https://github.com/ps-labo/ltsvparser",
 		"description":"ltsvparser",
 		"count":200
 	}
 	
 	$ cat tsvdata.txt | ltsvparser.awk tsv_label=datetime,url,description,count format=ltsv
-	datetime:2014/07/11 19:00	url:https://github.com/kazno/	description:my page	count:100
-	datetime:2014/07/11 19:30	url:https://github.com/kazno/ltsvparser	description:ltsvparser	count:200
+	datetime:2014/07/11 19:00	url:https://github.com/ps-labo/	description:my page	count:100
+	datetime:2014/07/11 19:30	url:https://github.com/ps-labo/ltsvparser	description:ltsvparser	count:200
 
 ### apache combined log to JSON, LTSV, TSV
 	$ cat access_log.sample 
